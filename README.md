@@ -241,4 +241,78 @@ resume-builder/
 - Advanced analytics and insights
 - Machine learning for personalized recommendations
 
-This architecture provides a solid foundation that's scalable, maintainable, and follows best practices for both backend and frontend development.
+## Technology and Architecture Explanations
+
+### FastAPI
+FastAPI is chosen as the backend framework because:
+- **High Performance**: Built on Starlette and Pydantic, offering exceptional speed comparable to Node.js and Go
+- **Automatic API Documentation**: Generates interactive Swagger UI and ReDoc documentation automatically
+- **Type Safety**: Leverages Python type hints for automatic validation and serialization
+- **Async Support**: Native support for async/await patterns for handling concurrent requests efficiently
+- **Dependency Injection**: Built-in DI system makes testing and configuration management easier
+- **OpenAPI Compliance**: Fully compliant with OpenAPI specification, making it easy to integrate with frontend tools
+
+### PostgreSQL
+PostgreSQL is selected as the database because:
+- **Reliability**: Mature, stable, and battle-tested relational database
+- **Advanced Features**: Supports JSONB data types, full-text search, and complex queries
+- **ACID Compliance**: Ensures data integrity and consistency
+- **Scalability**: Handles both small applications and large enterprise systems
+- **Extensibility**: Supports custom data types, functions, and extensions
+- **Security**: Robust security features including row-level security and encryption
+
+### React
+React is chosen for the frontend because:
+- **Component-Based Architecture**: Enables reusable UI components and better code organization
+- **Virtual DOM**: Provides excellent performance through efficient rendering
+- **Large Ecosystem**: Vast ecosystem of libraries and tools
+- **Developer Experience**: Excellent tooling with hot reloading, devtools, and comprehensive documentation
+- **Community Support**: Massive community with extensive resources and third-party integrations
+- **Cross-Platform**: Can be used for web, mobile (React Native), and desktop applications
+
+### Ollama
+Ollama is selected as the default AI provider because:
+- **Local Processing**: Runs models locally without sending data to external servers, ensuring privacy
+- **Open Source**: Fully open-source with no vendor lock-in
+- **Easy Integration**: Simple API for integrating LLM capabilities into applications
+- **Model Variety**: Supports various LLMs including Llama, Mistral, and others
+- **Resource Efficient**: Optimized for local execution on developer machines
+- **Future-Proof**: Allows switching between different models without changing application logic
+
+### Clean Architecture
+Clean Architecture is implemented because:
+- **Separation of Concerns**: Clearly separates business logic from infrastructure concerns
+- **Testability**: Makes unit testing easier by isolating business logic from external dependencies
+- **Maintainability**: Reduces coupling between components, making codebase easier to maintain
+- **Flexibility**: Allows changing databases, UI frameworks, or external services without affecting core logic
+- **Scalability**: Supports growth and evolution of the application over time
+- **Team Collaboration**: Clear boundaries make it easier for multiple developers to work on different layers
+
+### SQLAlchemy
+SQLAlchemy is used as the ORM because:
+- **Pythonic Interface**: Provides a Pythonic way to interact with databases
+- **Database Agnostic**: Works with multiple database backends (PostgreSQL, MySQL, SQLite)
+- **Rich Feature Set**: Supports advanced features like relationship mapping, eager loading, and query optimization
+- **Type Safety**: Integrates well with Pydantic for type validation
+- **Performance**: Offers both high-level and low-level interfaces for optimal performance
+- **Community Support**: Well-established with extensive documentation and community support
+
+### Alembic
+Alembic is chosen for database migrations because:
+- **Version Control**: Provides a way to track and manage database schema changes
+- **Automated Migration Generation**: Can auto-generate migration scripts based on model changes
+- **Rollback Capability**: Allows reverting changes when needed
+- **Integration**: Seamlessly integrates with SQLAlchemy and FastAPI
+- **Flexibility**: Supports complex migration scenarios including data migrations
+- **Standard Practice**: Industry-standard tool for database versioning in Python applications
+
+### TypeScript
+TypeScript is used for the frontend because:
+- **Type Safety**: Catches errors at compile-time rather than runtime
+- **Enhanced Development Experience**: Provides better IDE support with autocompletion and refactoring
+- **Scalability**: Scales well for large applications with complex type systems
+- **Interoperability**: Works seamlessly with React and modern JavaScript frameworks
+- **Maintainability**: Makes code more readable and maintainable through explicit typing
+- **Ecosystem Integration**: Compatible with all major frontend tools and libraries
+
+Each of these technologies was carefully selected to ensure a robust, scalable, maintainable, and performant application that meets the requirements while providing an excellent developer and user experience.

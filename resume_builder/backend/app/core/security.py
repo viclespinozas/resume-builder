@@ -49,3 +49,7 @@ def verify_token(token: str) -> dict:
             detail="Could not validate credentials",
             headers={"WWW-Authenticate": "Bearer"},
         )
+
+def get_current_user(token: str) -> dict:
+    """Extract user data from access token"""
+    return verify_token(token)

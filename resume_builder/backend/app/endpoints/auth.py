@@ -74,9 +74,8 @@ async def register(request: UserRegister, db: Session = Depends(get_db)):
     db.refresh(db_user)
     
     # Create token pair for the new user
-    access_token_expires = timedelta(minutes=settings.access_token_expire_minutes)
     token_pair = create_token_pair(
-        data={"sub": db_user.email}, expires_delta=access_token_expires
+        data={"sub": db_user.email}
     )
     
     return token_pair
